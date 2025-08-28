@@ -4,6 +4,18 @@
 
 This project creates a comprehensive Retrieval-Augmented Generation (RAG) pipeline using the Nelson Textbook of Pediatrics (22nd Edition) as the knowledge base. The system processes the entire 4,534-page textbook into searchable chunks with rich metadata for accurate citation and tracing.
 
+## 🚨 Required Setup
+
+**Before using this system, you need to download the data files:**
+
+👉 **[See SETUP_FILES.md for complete instructions](./SETUP_FILES.md)**
+
+Required files (from Google Drive):
+- `nelson_chunks.csv` (30.8 MB) - Main knowledge base
+- `nelson_textbook_of_pediatrics.pdf` (155.5 MB) - Source textbook
+
+These files are excluded from the repository due to size limits but are essential for the system to work.
+
 ## Features
 
 ✅ **Complete PDF Processing**: Extracts text from all 4,534 pages  
@@ -65,6 +77,8 @@ chunk_token_count,chunk_text,chunk_summary,keywords,confidence_score,created_at
 - **created_at**: ISO timestamp
 
 ## Usage Examples
+
+> **⚠️ Prerequisites**: Ensure you have completed the [file setup instructions](./SETUP_FILES.md) before running these examples.
 
 ### 1. Basic Search
 
