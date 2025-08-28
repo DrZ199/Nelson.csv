@@ -1,0 +1,105 @@
+{
+  "timestamp": "2025-08-28T04:17:54.368140",
+  "completeness": {
+    "total_chunks": 4534,
+    "missing_data": {
+      "id": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "chunk_text": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "page_number": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "chunk_token_count": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "chapter_title": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "section_heading_path": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      }
+    },
+    "page_coverage": {
+      "min_page": 1,
+      "max_page": 4534,
+      "unique_pages": 4534,
+      "expected_pages": 4534,
+      "coverage_percentage": 100.0
+    },
+    "token_distribution": {}
+  },
+  "token_distribution": {
+    "mean": 1570.0441111601235,
+    "median": 1607.0,
+    "std": 397.4511837372904,
+    "min": 76,
+    "max": 3399,
+    "percentiles": {
+      "25th": 1319.25,
+      "75th": 1864.0,
+      "95th": 2144.0
+    }
+  },
+  "content_quality": {
+    "confidence_scores": {
+      "mean": 0.8537626819585356,
+      "median": 0.9,
+      "std": 0.06461685793270165,
+      "low_confidence_count": 0
+    },
+    "medical_content": {
+      "patient_mentions": {
+        "count": 411,
+        "percentage": 41.1
+      },
+      "treatment_mentions": {
+        "count": 594,
+        "percentage": 59.4
+      },
+      "diagnosis_mentions": {
+        "count": 505,
+        "percentage": 50.5
+      },
+      "syndrome_mentions": {
+        "count": 507,
+        "percentage": 50.7
+      },
+      "disease_mentions": {
+        "count": 707,
+        "percentage": 70.7
+      },
+      "therapy_mentions": {
+        "count": 425,
+        "percentage": 42.5
+      }
+    },
+    "text_characteristics": {}
+  },
+  "citation_validation": {
+    "missing_authors": 0,
+    "missing_isbn": 0,
+    "invalid_page_numbers": 0,
+    "missing_chapters": 0
+  },
+  "sample_queries": [
+    "diabetes treatment in children",
+    "fever management in infants",
+    "asthma diagnosis and therapy",
+    "congenital heart disease screening",
+    "vaccination schedule recommendations",
+    "growth and development milestones",
+    "pediatric emergency medicine",
+    "infectious disease prevention",
+    "nutritional disorders in children",
+    "behavioral issues in adolescents"
+  ]
+}
