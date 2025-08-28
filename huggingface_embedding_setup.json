@@ -1,0 +1,67 @@
+{
+  "title": "Hugging Face Embeddings Setup Guide for Medical RAG",
+  "prerequisites": {
+    "python_packages": [
+      "sentence-transformers>=2.0.0",
+      "transformers>=4.20.0",
+      "torch>=1.11.0",
+      "faiss-cpu>=1.7.0",
+      "numpy>=1.21.0",
+      "pandas>=1.3.0"
+    ],
+    "hardware_requirements": {
+      "minimum": "4GB RAM, CPU",
+      "recommended": "16GB RAM, GPU with 8GB VRAM",
+      "for_large_models": "32GB RAM, GPU with 16GB+ VRAM"
+    }
+  },
+  "recommended_models": {
+    "general_medical": {
+      "model": "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext",
+      "description": "Pre-trained on biomedical literature",
+      "use_case": "General medical queries",
+      "embedding_size": 768
+    },
+    "clinical": {
+      "model": "dmis-lab/biobert-base-cased-v1.1",
+      "description": "BioBERT for clinical text",
+      "use_case": "Clinical notes and patient data",
+      "embedding_size": 768
+    },
+    "fast_general": {
+      "model": "all-MiniLM-L6-v2",
+      "description": "Fast general-purpose model",
+      "use_case": "When speed is priority",
+      "embedding_size": 384
+    },
+    "multilingual": {
+      "model": "paraphrase-multilingual-MiniLM-L12-v2",
+      "description": "Multilingual medical content",
+      "use_case": "International medical texts",
+      "embedding_size": 384
+    }
+  },
+  "implementation_steps": [
+    "1. Install required packages: pip install sentence-transformers transformers torch",
+    "2. Initialize model: model = SentenceTransformer('microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext')",
+    "3. Generate embeddings: embeddings = model.encode(texts, batch_size=32)",
+    "4. Save embeddings: np.save('medical_embeddings.npy', embeddings)",
+    "5. Build FAISS index for fast search: import faiss; index = faiss.IndexFlatIP(embedding_dim)",
+    "6. Add embeddings to index: index.add(embeddings.astype('float32'))",
+    "7. Search: similarities, indices = index.search(query_embedding, k=10)"
+  ],
+  "optimization_tips": [
+    "Use batch processing for large datasets",
+    "Normalize embeddings for cosine similarity",
+    "Cache embeddings to disk to avoid recomputation",
+    "Use FAISS for similarity search with >10k documents",
+    "Fine-tune models on medical domain data if possible",
+    "Combine multiple embedding models for ensemble search"
+  ],
+  "expected_improvements": {
+    "precision": "20-40% better relevant results",
+    "recall": "30-50% better coverage of medical concepts",
+    "semantic_understanding": "Understands medical synonyms and relationships",
+    "context_awareness": "Better handling of medical context and terminology"
+  }
+}
